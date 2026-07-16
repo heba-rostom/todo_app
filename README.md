@@ -9,3 +9,5 @@ home screen :
 task screen :
 <img width="418" height="891" alt="image" src="https://github.com/user-attachments/assets/21cda8da-2019-4354-9202-d2c490382a23" />
 add task screen :
+<img width="416" height="890" alt="image" src="https://github.com/user-attachments/assets/6f474bfb-86e5-4fca-b5b3-f216204422ad" />
+empety task screen :
