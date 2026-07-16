@@ -7,3 +7,5 @@ auth screen:
 
 <img width="372" height="796" alt="image" src="https://github.com/user-attachments/assets/edce2c32-09c2-4879-a896-21a980dda01d" />
 home screen :
+<img width="417" height="888" alt="image" src="https://github.com/user-attachments/assets/5a9b5429-a607-4433-a46c-53c13cea401b" />
+task screen :
