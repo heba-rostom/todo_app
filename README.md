@@ -4,3 +4,6 @@ splash screen:
 
 <img width="403" height="862" alt="image" src="https://github.com/user-attachments/assets/c29abf8a-d408-4814-b8d7-bf225befe4da" />
 auth screen:
+
+<img width="372" height="796" alt="image" src="https://github.com/user-attachments/assets/edce2c32-09c2-4879-a896-21a980dda01d" />
+home screen :
