@@ -1,9 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:todo_app/core/theme/app_text_style.dart';
+import 'package:todo_app/features/add_task/data/models/task_model.dart';
 
 class TaskItem extends StatelessWidget{
-  const TaskItem({super.key});
+  final TaskModel task;
+  const TaskItem({super.key, required this.task});
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -20,7 +22,7 @@ class TaskItem extends StatelessWidget{
               height: 100,
               width: 25,
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color:Color(task.color),
                 borderRadius: BorderRadius.circular(100),
               ),
             ),
@@ -30,16 +32,16 @@ class TaskItem extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 8,
                 children: [
-                  Text("Flutter Ui",style:AppTextStyle.headlineStyle ),
-                  Text("Build Register Screen",style:AppTextStyle.hintStyle ),
+                  Text(task.title,style:AppTextStyle.headlineStyle ),
+                  Text(task.description,style:AppTextStyle.hintStyle ),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 16,vertical: 8),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
-                      color: Colors.blue.shade100,
+                      color: Color(task.color).withValues(alpha:.4),
                     ),
-                    child: Text("Pending",style: AppTextStyle.bodySmallStyle.copyWith(
-                      color: Colors.blue,
+                    child: Text(task.status,style: AppTextStyle.bodySmallStyle.copyWith(
+                      color:Color(task.color),
                     )),
                   ),
                 ],

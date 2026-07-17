@@ -6,7 +6,13 @@ class CustomTextField extends StatelessWidget{
   final String title;
   final String hintText;
   final TextEditingController? controller ;
-  const CustomTextField({super.key,required this .title,required this.hintText,this.controller});
+  final String? Function(String?)? validator;
+  final int? maxLine;
+  final Color fillColor;
+  final bool?readOnly;
+  final void Function()? onTap;
+
+  const CustomTextField({super.key,required this .title,required this.hintText,this.controller, this.validator, this.maxLine,required this.fillColor, this.readOnly,this.onTap});
   @override
   Widget build(BuildContext context) {
    return Column(
@@ -19,16 +25,12 @@ class CustomTextField extends StatelessWidget{
       onTapOutside: (v){
       FocusScope.of(context).unfocus();
       },
-      validator: (v){
-        if(v==null ||v.isEmpty){
-         return "Name is required";
-        }else if(v.length<3){
-        return "the name must be greater than 3 letters";
-        }
-        return null ;
-      },
+      validator: validator,
+      maxLines:maxLine,
+      readOnly:readOnly??false,
+      onTap:onTap ,
       decoration: InputDecoration(
-        fillColor:Colors.grey.shade300,
+        fillColor:fillColor,
         filled:true,
         hintText: hintText,
         border: OutlineInputBorder(

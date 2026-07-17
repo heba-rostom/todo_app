@@ -93,6 +93,13 @@ class _AuthScreenState extends State<AuthScreen> {
               CustomTextField(
                 title: "Full Name", hintText: "Enter your name ",
                 controller: nameController,
+                validator: (v){
+                  if(v==null||v.isEmpty){
+                    return "Name is required";
+                  }
+                  return null;
+                },
+                fillColor:Colors.grey.shade300,
                 ),
               SizedBox(height:20),
               CustomButton(
@@ -107,7 +114,6 @@ class _AuthScreenState extends State<AuthScreen> {
                       ));
                       return;
                   }
-
                   if( formkey.currentState?.validate()??false){
                    Hive.box<UserModel>(AppConstant.userBox).add(
                     UserModel(image: image?.path??"", name: nameController.text)).then((value){
